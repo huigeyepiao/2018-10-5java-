@@ -1,0 +1,40 @@
+package com.github.company;
+/*
+ * 定义经理类
+ * 		属于员工一种，继承Employee
+ */
+public class Manager extends Employee implements BirthdayGift{
+	private int salaryOfManager; //经理的工资
+	private int money;			//奖金
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
+	public int getSalaryOfManager() {
+		return salaryOfManager;
+	}
+
+	public void setSalaryOfManager(int salaryOfManager) {
+		this.salaryOfManager = salaryOfManager;
+	}
+
+	public Manager(){}
+	
+	public Manager(String name,String id,String birthday){
+		super(name,id,birthday);
+	}
+
+	@Override
+	public void getBirthdayGift() {
+		// TODO 自动生成的方法存根
+		System.out.println("当月生日时，经理在拿工资的时候获得生日礼物");
+		
+	}
+
+
+	
+}

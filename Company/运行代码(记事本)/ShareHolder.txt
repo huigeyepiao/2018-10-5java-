@@ -1,0 +1,17 @@
+package com.github.company;
+/*
+ * 定义股东类
+ * 		
+ */
+public class ShareHolder extends Employee{
+	private double share;//股份
+
+	public double getShare() {
+		return share;
+	}
+
+	public void setShare(double share) {
+		this.share = share;
+	}
+	
+}

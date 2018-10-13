@@ -1,0 +1,32 @@
+package com.github.company;
+/*
+ * 定义员工类
+ * 		属于员工一种，继承Employee
+ */
+public class Staff extends Employee implements BirthdayGift{
+	private int salaryOfStaff;
+	public int getSalaryOfStaff() {
+		return salaryOfStaff;
+	}
+
+	public void setSalaryOfStaff(int salaryOfStaff) {
+		this.salaryOfStaff = salaryOfStaff;
+	}
+
+	public Staff() {
+		super();
+		// TODO 自动生成的构造函数存根
+	}
+
+	public Staff(String name, String id, String birthday) {
+		super(name, id, birthday);
+		// TODO 自动生成的构造函数存根
+	}
+
+	@Override
+	public void getBirthdayGift() {
+		// TODO 自动生成的方法存根
+		System.out.println("当月生日时，员工在拿工资的时候获得生日礼物");
+	}
+
+}

@@ -1,0 +1,123 @@
+package com.github.company;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int annualprofit = 0;		//全年利润
+		int totalturnover = 0;	//总营业额
+		int annualpay = 0 ;	//全年工资支出
+		annualprofit = totalturnover - annualpay;
+		List <Staff> list1 = new ArrayList<>();
+		List <Manager> list2 = new ArrayList<>();
+		List <ShareHolder> list3 = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		while(true){
+			System.out.println("请输入员工信息：");
+			Staff s1 = new Staff();
+			System.out.println("请输入员工的姓名：");
+			s1.setName(sc.next());
+			System.out.println("请输入员工的工号：");
+			s1.setId(sc.next());
+			System.out.println("请输入员工的生日：");
+			s1.setBirthday(sc.next());
+			list1.add(s1);
+			System.out.println("请输入是否继续添加员工信息：1.是     2。否");
+			int m =sc.nextInt();
+			if(m!=1) break;
+		}
+		//迭代器输出所有员工的信息
+		Iterator<Staff> it = list1.iterator();
+		while(it.hasNext()){
+			Staff em=it.next();
+				System.out.println(em.getName()+"  "+em.getId()+"  "+em.getBirthday());
+		}
+		System.out.println("请输入要发那年那月的工资");
+		int str = sc.nextInt();
+		for(Staff em:list1){
+			em.setSalaryOfStaff(str);
+			System.out.println("正在发放工资：");
+			System.out.println("员工的工资为"+em.getSalaryOfStaff());
+		}
+		
+		//员工自己输入自己的信息登录验证
+/*	    while(true){
+		Staff s1 = new Staff();
+		System.out.println("请输入您的姓名：");
+		s1.setName(sc.next());
+		System.out.println("请输入您的工号：");
+		s1.setId(sc.next());
+		System.out.println("请输入您的生日：");
+		s1.setBirthday(sc.next());
+		int m=0;
+		for(Employee em:list1){
+			if(em.equals(s1)) {
+				m++;
+				System.out.println("您输入的信息正确");
+				}
+		}
+		if(m==0) System.out.println("您输入的信息有误，请重新输入");
+		}
+*/
+		while(true){
+			System.out.println("请输入经理信息：");
+			Manager m1 = new Manager();
+			System.out.println("请输入经理的姓名：");
+			m1.setName(sc.next());
+			System.out.println("请输入经理的工号：");
+			m1.setId(sc.next());
+			System.out.println("请输入经理的生日：");
+			m1.setBirthday(sc.next());
+			list2.add(m1);
+			System.out.println("请输入是否继续添加经理信息：1.是     2。否");
+			int m =sc.nextInt();
+			if(m!=1) break;
+		}
+		//迭代器输出所有经理的信息
+				Iterator<Manager> it2 = list2.iterator();
+				while(it.hasNext()){
+					Manager ma=it2.next();
+						System.out.println(ma.getName()+"  "+ma.getId()+"  "+ma.getBirthday());
+				}
+				System.out.println("请输入要发那年那月的工资");
+				int str2 = sc.nextInt();
+				for(Manager ma:list2){
+					ma.setSalaryOfManager(str2);
+					System.out.println("正在发放工资：");
+					System.out.println("经理的工资为"+ma.getSalaryOfManager());
+				}
+				while(true){
+					System.out.println("请输入股东信息：");
+					ShareHolder sh1 = new ShareHolder();
+					System.out.println("请输入股东的姓名：");
+					sh1.setName(sc.next());
+					System.out.println("请输入股东的工号：");
+					sh1.setId(sc.next());
+					System.out.println("请输入股东的生日：");
+					sh1.setBirthday(sc.next());
+					list3.add(sh1);
+					System.out.println("请输入是否继续添加股东信息：1.是     2。否");
+					int m =sc.nextInt();
+					if(m!=1) break;
+				}
+				//迭代器输出所有经理的信息
+				Iterator<ShareHolder> it3 = list3.iterator();
+				while(it.hasNext()){
+					ShareHolder sh=it3.next();
+						System.out.println(sh.getName()+"  "+sh.getId()+"  "+sh.getBirthday());
+				}
+				System.out.println("请输入要发那年那月的工资");
+				double str3 = sc.nextInt();
+				for(ShareHolder sh:list3){
+					sh.setShare(str3);
+					System.out.println("正在分红：");
+					System.out.println("股东的分红为"+sh.getShare());
+				}
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.github.company;
+
+public interface BirthdayGift {
+	public abstract void getBirthdayGift();
+}
